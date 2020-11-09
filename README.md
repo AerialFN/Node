@@ -18,13 +18,16 @@ The main backend server.
 4. ``GRANT ALL PRIVILEGES ON `aerial` TO 'aerial';``
 5. `FLUSH PRIVILEGES;`
 
-### Setting Up the Servers
+### Setting Up the Servers (Docker)
+man idk im new to docker
+
+### Setting Up the Servers (Standalone)
 1. `useradd -r -s /bin/false aerial`
 2. `mkdir /usr/local/lib/aerial`
 3. Upload all files from repository into `/usr/local/lib/aerial`
 4. Upload your certificate to `/usr/local/lib/aerial/ssl/cert.pem`
 5. Upload your private key to `/usr/local/lib/aerial/ssl/key.pem`
-6. Fill out `config.example.yml` and rename it to `config.yml`
+6. Fill out `config.yml`
 7. `pip3 install -r /usr/local/lib/aerial/requirements.txt`
 8. `mv /usr/local/lib/aerial/aerial.service /etc/systemd/system/aerial.service`
 9. `chown -R aerial:nobody /usr/local/lib/aerial`
