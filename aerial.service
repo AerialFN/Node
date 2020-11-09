@@ -1,0 +1,14 @@
+[Unit]
+Description=Aerial Node Service
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /usr/local/lib/aerial/start.sh
+ExecReload=kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+User=aerial
+
+[Install]
+WantedBy=default.target

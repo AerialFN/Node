@@ -1,0 +1,9 @@
+.nova/
+.vercel/
+venv/
+ssl/
+__pycache__/
+*.yml
+!*.example.yml
+*.sqlite
+*.log

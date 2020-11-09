@@ -1,0 +1,4 @@
+fortnitepy
+websockets
+pyyaml
+mysql-connector-python
