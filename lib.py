@@ -1,4 +1,3 @@
-"""AerialLib v1"""
 import fortnitepy
 import json
 import asyncio
@@ -434,6 +433,11 @@ async def process(bot: Client, cmd: dict):
                 await bot.party.me.set_ready(fortnitepy.ReadyState.READY)
             elif cmd["value"] == 2:
                 await bot.party.me.set_ready(fortnitepy.ReadyState.SITTING_OUT)
+        elif cmd["action"] == "set_match_state":
+            if cmd.get("value", None) is None:
+                await bot.party.me.clear_in_match()
+            else:
+                await bot.party.me.set_in_match(players_left=cmd["value"])
         elif cmd["action"] == "leave":
             await bot.party.me.leave()
         elif cmd["action"] == "send_msg":
